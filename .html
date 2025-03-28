@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Difference - Ugadi Special</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            position: relative;
+            display: inline-block;
+        }
+        .timer {
+            font-size: 24px;
+            margin: 10px;
+            font-weight: bold;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spot the Difference - Ugadi Special</h1>
+    <div class="timer">Time Left: <span id="countdown">30</span> seconds</div>
+    <div class="image-container">
+        <img src="ugadi_image1.jpg" alt="Ugadi Image 1">
+        <img src="ugadi_image2.jpg" alt="Ugadi Image 2">
+    </div>
+    <p>Click on the differences!</p>
+    <script>
+        let timeLeft = 30;
+        const timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                document.getElementById("countdown").textContent = timeLeft;
+            } else {
+                clearInterval(timer);
+                alert("Time's up! Try again!");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
